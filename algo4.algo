@@ -1,0 +1,28 @@
+ALGORITHM Tri_sélection
+VAR
+    t  : ARRAY_OF INTEGER ;
+    i,j,aux : INTEGER  ;
+    min : INTEGER;
+
+BEGIN
+        i:=1;
+WHILE (i<longueur(t)) DO
+        j:=i+1;
+        min:=i;
+    
+    WHILE (j<=longueur(t)) DO
+        IF t[j]<t[min] THEN
+            min:=j;
+        END_IF
+            j:=j+1;
+    END_WHILE
+
+    IF min<>i THEN
+        aux:=t[i];
+        t[i]:=t[min];
+        t[min]:=aux;
+
+    END_IF
+        i:=i+1;
+END_WHILE
+END
